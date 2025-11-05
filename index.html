@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Steam Game Picker</title>
+</head>
+<body class="flex align-center">
+    <header class="default-block flex align-center justify-between">
+        <h1>Steam Game Picker</h1>
+        <nav class="flex align-center justify-between gap-hg">
+            <a class="flex align-center gap-sm" href="https://github.com/Pandore10"><img id="github-logo" src="./imgs/logo-github.svg"/>GitHub</a>
+            <div class="flex align-center gap-sm">
+                <a>EN</a>
+                <p>|</p>
+                <a>PT</a>
+            </div>
+            <a><img id="light-mode-img" src="./imgs/sunny-outline.svg"/></a>
+        </nav>
+    </header>
+    <main class="default-block flex flex-col align-center">
+        <div>
+            <form class="flex flex-col gap-sm" onsubmit="getGames()">
+                <input type="text" id="steamid" placeholder="SteamID"/>
+                <input class="pointer" type="submit"/>
+            </form>
+            <div id="resultado"></div>
+        </div>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
