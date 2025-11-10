@@ -1,9 +1,4 @@
-const mock = {
-    "appid": 10,
-    "name": "Counter-Strike",
-    "playtime": 17,
-    "img_hash": "6b0312cda02f5f777efa2f3318c307ff9acafbb5",
-}
+let form = document.getElementById('getForm').addEventListener('submit', e => e.preventDefault());
 
 async function getGames() {
     const steamid = document.getElementById('steamid').value;
@@ -13,18 +8,19 @@ async function getGames() {
         return;
     }
 
-    /*try {
-        const response = await fetch();
+    try {
+        const response = await fetch(`http://localhost:3000/jogo-aleatorio?steamid=${steamid}`);
         const data = await response.json();
 
-        return data;
+        return buildPage(data.response);
     } catch (error) {
         console.error('Erro de fetch: ', error);
-    }*/
+    }
 }
 
 function buildPage(data) {
     const resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.style.display = 'flex';
 
     //Adicionando headerText
     const headerText = document.createElement('h2');
@@ -37,7 +33,7 @@ function buildPage(data) {
 
     const icone = document.createElement('img');
     icone.setAttribute('id', "gameIcon");
-    icone.setAttribute('src', `http://media.steampowered.com/steamcommunity/public/images/apps/${data.appid}/${data.img_hash}.jpg`);
+    icone.setAttribute('src', `https://steamcdn-a.akamaihd.net/steam/apps/${data.appid}/header.jpg`);
     
     const gameName = document.createElement('h3');
     gameName.setAttribute('id', "gameName");
@@ -72,8 +68,6 @@ function buildPage(data) {
     resultadoDiv.appendChild(playtime);
     resultadoDiv.appendChild(playButton);
 }
-
-buildPage(mock);
 
 function isInt(valor) {
     return !isNaN(valor) && parseInt(Number(valor)) == valor && !isNaN(parseInt(valor, 10));
