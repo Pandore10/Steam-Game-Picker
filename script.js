@@ -12,7 +12,7 @@ async function getGames() {
         const response = await fetch(`http://localhost:3000/jogo-aleatorio?steamid=${steamid}`);
         const data = await response.json();
 
-        return buildPage(data.response);
+        return buildPage(data);
     } catch (error) {
         console.error('Erro de fetch: ', error);
     }
