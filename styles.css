@@ -28,12 +28,25 @@
     padding: 0;
     margin: 0;
     
-    font-family: 'Open-sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 :root {
-    --content-bg-color: #f3f5f9;
-    --primary-bg-color: #505353;
+    /*Palette darkmode*/
+    --main-bg: #000;
+    --card-bg: #1d1d1d;
+    --text-color: #8b8b8b;
+    --detail-dark: #323232;
+    --detail-light: #444;
+}
+
+ /*Palette lightmode*/
+.light-mode {
+    --main-bg: #818181;
+    --card-bg: #a6a6a6;
+    --text-color: #1d1d1d;
+    --detail-dark: #cbcbcb;
+    --detail-light: #dddddd;
 }
 
 .flex {
@@ -81,16 +94,95 @@
 }
 
 .default-block {
-    background-color: var(--content-bg-color);
+    background-color: var(--card-bg);
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
+    box-shadow: 2px 2px 3px var(--main-bg);
     transition: ease all .5s;
 }
 
+.button {
+    transition: background-color .5s ease, opacity .5s ease;
+    background-color: var(--detail-dark);
+    
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 100px;
+    padding: 8px 20px;
+}
+
+.button:hover {
+    opacity: .7;
+}
+
+.button:active {
+    background-color: var(--main-bg);
+    opacity: .4;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 92px;
+    height: 46px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--detail-light);
+    transition: .4s;
+    border-radius: 100px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    left: 4px;
+    bottom: 3px;
+    background-color: var(--card-bg);
+    transition: .4s;
+    border-radius: 100px;
+}
+
+.slider:hover::before {
+    background-color: var(--detail-dark);
+}
+
+.slider:active::before {
+    background-color: var(--main-bg);
+}
+
+input:checked + .slider:before {
+    transform: translateX(44px);
+}
+
 body {
-    background-color: var(--primary-bg-color);
+    background-color: var(--main-bg);
     flex-direction: column;
+}
+
+h1, h2, h3, p {
+    color: var(--text-color)
+}
+
+nav {
+    height: 100%;
 }
 
 input {
@@ -100,35 +192,48 @@ input {
 }
 
 input[type="text"] {
-    background-color: #DDD;
-    border: 2px solid transparent;
-    transition: border-color .6s ease;
-    transition: background-color .3s ease;
+    background-color: var(--detail-dark);
+    border: 2px solid var(--detail-dark);
+    transition: border-color .6s ease, background-color .6s ease;
     outline: none;
 }
 
 input[type="text"]:focus {
-    border-color: #AAA;
+    border-color: var(--detail-light);
+    background-color: var(--detail-dark);
+    
 }
 
-input[type="text"]:hover {
-    background-color: #CCC;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--text-color);
+    box-shadow: 0 0 20px 30px var(--detail-dark) inset !important;
+    transition: box-shadow .5s ease, -webkit-text-fill-color .5s ease;
 }
 
 input[type="submit"] {
-    background-color: #888;
-    color: #fff;
+    background-color: var(--detail-dark);
+    color: var(--text-color);
     font-weight: bold;
     font-size: 1.2em;
-    transition: background-color .3s ease;
+    transition: background-color .3s ease, opacity .3s ease;
 }
 
-input[type="submit"]:hover {
-    background-color: #333;
+input[type="submit"]:active {
+    background-color: var(--main-bg);
 }
 
 #light-mode-img {
-    height: 30px;
+    height: 32px;
+}
+
+#light-mode-toggle {
+    background-color: var(--detail-light);
+    border-radius: 100px;
+    padding: 7px;
 }
 
 #github-logo {
@@ -136,28 +241,30 @@ input[type="submit"]:hover {
 }
 
 #resultado {
-    background-color: #888;
+    background-color: var(--detail-light);
     display: none;
 }
 
-#gameIcon {
+#game-icon {
     height: 96px;
     border-radius: 8px;
 }
 
-#gamePlayButton:link, #gamePlayButton:visited {
-    background-color: var(--content-bg-color);
-    transition: background-color .3s ease;
+#play-button {
+    white-space: pre;
+}
 
-    padding: 10px 30px;
-    border-radius: 100px;
+#play-button-img {
+    height: 30px;
+}
 
-    text-decoration: none;
-    color: black;
+#pt, #en {
+    z-index: 1;
+}
+
+#lang-switch {
+    padding-left: 14px;
+    gap: 25px;
+    color: var(--text-color);
     font-weight: bold;
 }
-
-#gamePlayButton:hover, #gamePlayButton:active {
-    background-color: #DDD;
-}
-

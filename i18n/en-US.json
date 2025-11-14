@@ -1,0 +1,13 @@
+{
+    "search": "Search",
+    "selected-game": "Selected game",
+    "hour": "hour",
+    "hours": "hours",
+    "minutes": "minutes",
+    "play-button": "▶   Play",
+    "error_nosteamid": "Enter your SteamID64.",
+    "error_wronglength": "SteamID64 must have exactly 17 digits.",
+    "error_api": "API error.",
+    "error_server": "Server connection failed.",
+    "copyright": "© 2025 Felipe Menezes. All rights reserved."
+}

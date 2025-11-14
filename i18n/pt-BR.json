@@ -1,0 +1,13 @@
+{
+    "search": "Buscar",
+    "selected-game": "Jogo selecionado",
+    "hour": "hora",
+    "hours": "horas",
+    "minutes": "minutos",
+    "play-button": "▶   Jogar",
+    "error_nosteamid": "Informe a SteamID64.",
+    "error_wronglength": "SteamID64 deve ter exatamente 17 digitos.",
+    "error_api": "Erro na API.",
+    "error_server": "Falha na conexão com o servidor",
+    "copyright": "© 2025 Felipe Menezes. Todos os direitos reservados."
+}

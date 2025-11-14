@@ -10,26 +10,28 @@
     <header class="default-block flex align-center justify-between">
         <h1>Steam Game Picker</h1>
         <nav class="flex align-center justify-between gap-hg">
-            <a class="flex align-center gap-sm" href="https://github.com/Pandore10"><img id="github-logo" src="./imgs/logo-github.svg"/>GitHub</a>
+            <a id="github-button" class="flex align-center gap-sm button" href="https://github.com/Pandore10"><img id="github-logo" src="./imgs/logo-github.svg"/>GitHub</a>
             <div class="flex align-center gap-sm">
-                <a>EN</a>
-                <p>|</p>
-                <a>PT</a>
+                <label class="switch">
+                    <input type="checkbox" id="checkbox"/>
+                    <span id="lang-switch" class="slider flex align-center">
+                        <span id="pt">PT</span>
+                        <span id="en">EN</span>
+                    </span>
+                </label>
             </div>
-            <a><img id="light-mode-img" src="./imgs/sunny-outline.svg"/></a>
+            <a id="light-mode-toggle" class="flex align-center button" onclick="lightModeToggle()"><img id="light-mode-img" src="./imgs/sunny-outline.svg"/></a>
         </nav>
     </header>
     <main class="default-block flex flex-col align-center">
-        <div>
-            <form id="getForm" class="flex flex-col gap-sm" onsubmit="getGames()">
-                <input type="text" id="steamid" placeholder="SteamID"/>
-                <input class="pointer" type="submit"/>
-            </form>
-        </div>
+        <form id="getForm" class="flex flex-col gap-sm">
+            <input type="text" id="steamid" placeholder="SteamID64"/>
+            <input class="pointer button" type="submit" data-i18n-value="search" value="Buscar"/>
+        </form>
         <div id="resultado" class="default-block flex align-center flex-col gap-md"></div>
     </main>
     <footer class="default-block flex flex-col align-center">
-        <p>© 2025 Felipe Menezes. Todos os direitos reservados.</p>
+        <p data-i18n="copyright">© 2025 Felipe Menezes. Todos os direitos reservados.</p>
     </footer>
     <script src="./script.js"></script>
 </body>
