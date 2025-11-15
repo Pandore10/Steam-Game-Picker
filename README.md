@@ -17,7 +17,7 @@ Uma **página web** que escolhe **aleatoriamente** um jogo da sua biblioteca Ste
     - Capa do jogo
     - Nome
     - Tempo jogado
-    - Botão **Jogar** ('steam://run/<appid>')
+    - Botão **Jogar** ('steam://run/\<appid\>')
 
 ---
 
