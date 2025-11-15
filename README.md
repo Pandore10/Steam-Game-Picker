@@ -47,4 +47,5 @@ cd Steam-Game-Picker
 |---------------|-----------------------------------------------|
 |i18n           |Troca entre PT-BR e EN-US com JSONs e data-i18n|
 |Dark/Light Mode|Toggle com ícone de sol/lua                    |
-|Responsivo
+|Responsivo     |Layout ajusta em mobile, tablet e desktop      |
+|Persistencia   |Idioma salvo em localStorage                   |
