@@ -11,6 +11,10 @@
         gap: 10px;
     }
 
+    main .default-block {
+        width: 80%;
+    }
+
     footer p {
         font-size: .8em;
     }
@@ -20,6 +24,10 @@
     .default-block {
         width: 650px;
         padding: 20px;
+    }
+
+    main .default-block {
+        width: 40%;
     }
 }
 
