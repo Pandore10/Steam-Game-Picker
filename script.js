@@ -3,7 +3,7 @@ const LANGS = ['pt-BR', 'en-US'];
 let linguagemAtual = DEFAULT_LANG;
 let traducoes = {};
 
-const API_URL = import.meta.env?.VITE_API_URL || 'http://localhost:3000';
+//const API_URL = import.meta.env?.VITE_API_URL || 'http://localhost:3000';
 
 async function fetchGame() {
     const steamid = document.getElementById('steamid').value;
@@ -147,3 +147,5 @@ document.getElementById('checkbox').addEventListener('change', function () {
         setLinguagem('pt-BR');
     } 
 });
+
+document.getElementById('light-mode-toggle').addEventListener('click', lightModeToggle);
