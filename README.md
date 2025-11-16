@@ -52,5 +52,5 @@ cd Steam-Game-Picker
 
 ### Deploy
 
-- **Frontend**: [Netlify](steam-game-picker.netlify.app)
+- **Frontend**: [Netlify](https://steam-game-picker.netlify.app)
 - **Backend**: [Render](https://steam-game-picker-api.onrender.com)
