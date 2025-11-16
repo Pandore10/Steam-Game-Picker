@@ -3,6 +3,8 @@ const LANGS = ['pt-BR', 'en-US'];
 let linguagemAtual = DEFAULT_LANG;
 let traducoes = {};
 
+const API_URL = import.meta.env?.VITE_API_URL || 'http://localhost:3000';
+
 async function fetchGame() {
     const steamid = document.getElementById('steamid').value;
 
@@ -10,7 +12,7 @@ async function fetchGame() {
     if (!/^\d{17}$/.test(steamid)) return alert('SteamID64 deve ter exatamente 17 digitos.');
 
     try {
-        const response = await fetch(`http://localhost:3000/jogo-aleatorio?steamid=${steamid}`);
+        const response = await fetch(`${API_URL}/jogo-aleatorio?steamid=${steamid}`);
         const data = await response.json();
 
         if (!response.ok) return alert(data.erro || 'Erro na API.');

@@ -49,3 +49,8 @@ cd Steam-Game-Picker
 |Dark/Light Mode|Toggle com ícone de sol/lua                    |
 |Responsivo     |Layout ajusta em mobile, tablet e desktop      |
 |Persistencia   |Idioma salvo em localStorage                   |
+
+### Deploy
+
+- **Frontend**: [Netlify](steam-game-picker.netlify.app)
+- **Backend**: [Render](https://steam-game-picker-api.onrender.com)
